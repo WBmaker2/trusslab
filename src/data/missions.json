@@ -1,0 +1,136 @@
+[
+  {
+    "id": "triangle-vs-square",
+    "titleKo": "삼각형은 왜 단단할까?",
+    "concept": "stability",
+    "difficulty": 1,
+    "promptKo": "하중을 받는 네모 구조는 왜 모양을 유지하지 못할까요?",
+    "options": [
+      "대각선이 없어 각도가 자유롭게 변할 수 있다",
+      "재료가 너무 약해서",
+      "하중이 너무 커서",
+      "지지대가 너무 많아서"
+    ],
+    "answer": "대각선이 없어 각도가 자유롭게 변할 수 있다",
+    "setup": {
+      "presetModel": "rectangle",
+      "targetLoadN": 150,
+      "memberCount": 5,
+      "requireStable": true,
+      "requireTest": true,
+      "requirePass": true
+    },
+    "explanationKo": "네모는 네 변의 길이가 정해져도 각도는 정해지지 않습니다. 그래서 하중을 옆으로 밀면 평행사변형으로 찌그러질 수 있죠. 대각선을 넣으면 네모가 두 개의 삼각형으로 나뉘고, 세 변의 길이가 정해진 삼각형은 각도가 변하지 않습니다. 이 예시에서 대각선은 힘이 0에 가깝게 나와도 구조를 안정시키는 역할을 합니다.",
+    "takeawayKo": "삼각형은 변의 길이가 각도를 고정하는, 가장 단순한 안정 구조입니다.",
+    "hintKo": "부재 도구로 왼쪽 아래 절점과 오른쪽 위 절점을 연결해 보세요."
+  },
+  {
+    "id": "tension-compression",
+    "titleKo": "인장과 압축",
+    "concept": "forces",
+    "difficulty": 1,
+    "promptKo": "C점에 아래로 하중을 걸면, 아래쪽 수평 부재 AB에는 어떤 힘이 걸릴까요?",
+    "options": ["인장", "압축", "힘 0", "알 수 없음"],
+    "answer": "인장",
+    "setup": {
+      "presetModel": "triangle-200",
+      "targetLoadN": 200,
+      "requireTest": true,
+      "requirePass": true
+    },
+    "explanationKo": "양쪽 대각선 AC와 BC는 C점을 아래로 당기는 하중을 위로 받쳐 내며 압축됩니다. 왼쪽 지지점 A에서는 대각선이 A를 C 쪽으로 당기므로, 그 수평 성분을 AB가 반대 방향으로 당겨 균형을 잡습니다. 그래서 AB에는 인장이 걸립니다. 힘 표의 +는 인장, −는 압축입니다.",
+    "takeawayKo": "인장은 부재가 늘어나며 당기는 힘, 압축은 부재가 눌리며 미는 힘입니다. 색만 보지 말고 T/C 표시와 부호를 함께 읽으세요.",
+    "hintKo": "하중 시험을 실행한 뒤 힘 표에서 AB(부재 M3)의 부호를 확인하세요."
+  },
+  {
+    "id": "six-members",
+    "titleKo": "6개 부재로 버티기",
+    "concept": "design",
+    "difficulty": 2,
+    "promptKo": "같은 재료와 단면이라면, 긴 압축 부재와 짧은 압축 부재 중 무엇이 먼저 좌굴할까요?",
+    "options": ["긴 압축 부재", "짧은 압축 부재", "둘은 같다", "인장 부재"],
+    "answer": "긴 압축 부재",
+    "setup": {
+      "presetModel": "six-members",
+      "targetLoadN": 500,
+      "maxMembers": 6,
+      "maxCost": 1200,
+      "requireStable": true,
+      "requireTest": true,
+      "requirePass": true
+    },
+    "explanationKo": "좌굴하중은 길이의 제곱에 반비례합니다. 길이가 2배가 되면 좌굴하중은 4분의 1로 줄어듭니다. 이 미션의 4.24 m 압축 대각선을 목재로 만들면 좌굴하중이 약 114 N밖에 되지 않아 500 N 하중을 받칠 수 없습니다. 같은 단면이라도 강재는 탄성계수가 20배 커서 좌굴하중이 훨씬 높습니다. 인장이 걸리는 부재에는 목재를 써도 됩니다.",
+    "takeawayKo": "압축 부재는 길이가 길수록 약해집니다. 재료를 바꾸면 같은 단면으로도 좌굴하중을 크게 올릴 수 있습니다.",
+    "hintKo": "세 절점을 삼각형으로 연결해 보세요. 압축이 걸리는 긴 부재는 재료를 강재로 바꿔 보세요."
+  },
+  {
+    "id": "budget",
+    "titleKo": "예산 안에서 설계",
+    "concept": "budget",
+    "difficulty": 2,
+    "promptKo": "8 m 스팬에서 예산을 아끼려면, 인장이 걸리는 하현재에 비싼 강재를 꼭 써야 할까요?",
+    "options": [
+      "아니다. 인장 부재는 목재로도 충분할 수 있다",
+      "그렇다. 강재만 써야 한다",
+      "재료비는 구조와 무관하다",
+      "노드를 많이 만들수록 싸진다"
+    ],
+    "answer": "아니다. 인장 부재는 목재로도 충분할 수 있다",
+    "setup": {
+      "presetModel": "budget",
+      "targetLoadN": 800,
+      "maxMembers": 10,
+      "maxCost": 1500,
+      "requireStable": true,
+      "requireTest": true,
+      "requirePass": true
+    },
+    "explanationKo": "800 N 하중에서 대각선 압축력은 약 566 N입니다. 5.66 m 강재 대각선의 좌굴하중은 약 1,283 N로 안전합니다. 반면 아래쪽 수평재 AB는 인장을 받고, 목재의 허용 인장응력은 충분합니다. 강재 대각선 두 개와 목재 하현재 하나를 쓰면 예산 안에서 안전율을 확보할 수 있습니다. 모든 부재를 강재로 만들면 예산을 넘깁니다.",
+    "takeawayKo": "예산은 '무조건 비싼 재료'가 아니라, 힘의 종류와 좌굴 길이를 보고 재료를 고르는 문제입니다.",
+    "hintKo": "세 절점을 삼각형으로 연결하고, 압축 대각선은 강재, 인장 하현재는 목재로 바꿔 보세요."
+  },
+  {
+    "id": "zero-force",
+    "titleKo": "힘이 0인 부재",
+    "concept": "forces",
+    "difficulty": 2,
+    "promptKo": "힘이 0으로 나오는 부재는 빼 버려도 괜찮을까요?",
+    "options": [
+      "항상 괜찮다",
+      "이 구조에서는 빼면 불안정해질 수 있다",
+      "재료만 바꾸면 힘이 생긴다",
+      "하중을 키우면 안전해진다"
+    ],
+    "answer": "이 구조에서는 빼면 불안정해질 수 있다",
+    "setup": {
+      "presetModel": "zero-force",
+      "targetLoadN": 200,
+      "requireTest": true,
+      "requirePass": true,
+      "selectZeroForceMember": true
+    },
+    "explanationKo": "가운데 수직 부재 CD에는 힘이 거의 걸리지 않습니다. 하지만 D점은 AD와 DB가 한 직선 위에 있어, CD가 없으면 위아래로 움직일 수 있는 기구가 됩니다. 힘이 0이라는 사실과 필요 없다는 사실은 다릅니다. 이 부재는 형태를 고정하는 역할을 하고 있습니다.",
+    "takeawayKo": "힘이 0인 부재도 구조의 형태를 고정하거나 좌굴 길이를 줄이는 역할을 할 수 있습니다. 빼기 전에 안정성을 확인하세요.",
+    "hintKo": "부재를 하나씩 선택해 힘 표에서 0 N에 가까운 부재를 찾고, 그 부재를 선택한 채 시험을 실행하세요."
+  },
+  {
+    "id": "repair",
+    "titleKo": "불안정 구조 고치기",
+    "concept": "repair",
+    "difficulty": 3,
+    "promptKo": "이 워런 트러스는 부재 하나가 빠져 있습니다. 왜 하중을 받으면 형태가 유지되지 않을까요?",
+    "options": ["m + r < 2j라서", "재료가 약해서", "하중이 너무 커서", "지지대가 너무 많아서"],
+    "answer": "m + r < 2j라서",
+    "setup": {
+      "presetModel": "repair-missing",
+      "targetLoadN": 200,
+      "memberCount": 7,
+      "requireStable": true,
+      "requireTest": true,
+      "requirePass": true
+    },
+    "explanationKo": "빠진 것은 위쪽 수평재 DE입니다. DE가 없으면 부재 6개, 지지 성분 3개, 절점 5개로 m + r = 9 < 2j = 10입니다. DE를 넣으면 부재 7개가 되어 10 = 10, 정정 구조가 됩니다. 재료를 바꾸는 것으로는 부족하고, 빠진 구속을 채워야 합니다.",
+    "takeawayKo": "불안정은 재료 강도 문제가 아니라 구속(부재와 지지대)의 수와 배치 문제일 수 있습니다. m + r과 2j를 세어 보세요.",
+    "hintKo": "위쪽 두 절점 D와 E를 잇는 수평 부재를 추가하세요."
+  }
+]

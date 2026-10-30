@@ -1,0 +1,552 @@
+@media (min-width: 1024px) {
+  .panel {
+    height: var(--stage-h);
+  }
+}
+
+@media (max-width: 1280px) {
+  .studio {
+    grid-template-columns: 226px minmax(0, 1fr) 330px;
+  }
+
+  .stage-title-block {
+    flex-basis: 240px;
+  }
+
+  .stage {
+    --stage-h: calc(100vh - 126px);
+  }
+
+  .status-summary {
+    max-width: 220px;
+  }
+
+  .stage-title {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .overlay-toggle .btn-label,
+  .overlay-toggle-label {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .topbar-inner {
+    gap: 12px;
+  }
+
+  .route-nav {
+    margin-left: 6px;
+  }
+
+  .route-tab {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .stage-sub {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .main {
+    padding: 10px 12px 16px;
+  }
+
+  .studio {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'stage'
+      'tabs'
+      'panel';
+    gap: 9px;
+  }
+
+  .stage {
+    height: auto;
+    min-height: 0;
+  }
+
+  .stage-view {
+    height: min(56vh, 560px);
+    min-height: 310px;
+  }
+
+  .mobile-tabs-slot {
+    display: block;
+    position: sticky;
+    top: 6px;
+    z-index: 12;
+  }
+
+  .panel-left,
+  .panel-right {
+    grid-area: panel;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  #app[data-mobile-tab='forces'] .panel-left {
+    display: none;
+  }
+
+  #app:not([data-mobile-tab='forces']) .panel-right {
+    display: none;
+  }
+
+  .panel-left .sheet-mission {
+    display: none;
+  }
+
+  #app[data-mobile-tab='mission'] .panel-left .sheet-build {
+    display: none;
+  }
+
+  #app[data-mobile-tab='mission'] .panel-left .sheet-mission {
+    display: block;
+  }
+
+  #app[data-mobile-tab='mission'] .panel-left .panel-section + .panel-section {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .panel-inner {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .btn-icon.btn-sm {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-tab {
+    min-height: 46px;
+  }
+
+  .stage-status .btn {
+    min-height: 40px;
+  }
+
+  .dialog-actions .btn {
+    min-height: 44px;
+  }
+
+  .support-button {
+    min-height: 44px;
+  }
+
+  .field input {
+    min-height: 40px;
+  }
+
+  .chip {
+    min-height: 32px;
+  }
+
+  .tool-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tool-button {
+    min-height: 46px;
+    font-size: 12px;
+  }
+
+  .status-summary {
+    display: none;
+  }
+
+  .stage-status {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .status-metrics {
+    gap: 10px;
+  }
+
+  .page-hero {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 26px 24px;
+  }
+
+  .page-title {
+    font-size: clamp(31px, 6vw, 42px);
+  }
+
+  .mission-loop {
+    max-width: 520px;
+  }
+
+  .preset-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 10px 14px 18px;
+  }
+
+  .footer-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar-inner {
+    flex-wrap: wrap;
+    min-height: 0;
+    padding: 9px 12px 7px;
+    gap: 7px;
+  }
+
+  .brand {
+    order: 1;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .topbar-actions {
+    order: 2;
+  }
+
+  .topbar-help .btn-label {
+    display: none;
+  }
+
+  .route-nav {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    padding-top: 6px;
+    overflow-x: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    scrollbar-width: none;
+  }
+
+  .route-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .route-tab {
+    padding: 8px 11px;
+    font-size: 11.5px;
+  }
+
+  .stage-header {
+    padding: 11px 11px 9px;
+  }
+
+  .stage-title {
+    font-size: 21px;
+  }
+
+  .stage-sub {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+
+  .stage-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  .overlay-toggles {
+    order: 2;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .overlay-toggle {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .zoom-controls {
+    order: 1;
+  }
+
+  .view-toggle {
+    order: 1;
+    margin-left: auto;
+  }
+
+  .stage-view {
+    height: min(52vh, 460px);
+    min-height: 290px;
+  }
+
+  .status-counts {
+    display: none;
+  }
+
+  .status-metrics {
+    margin-left: 0;
+    gap: 9px;
+  }
+
+  .status-metric-label {
+    display: none;
+  }
+
+  .status-actions {
+    margin-left: auto;
+  }
+
+  .stage-status .btn-sm {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .warning-banner {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .warning-banner .btn {
+    padding: 4px 6px;
+    font-size: 9px;
+  }
+
+  .hud-badges .badge:last-child {
+    display: none;
+  }
+
+  .page {
+    gap: 13px;
+  }
+
+  .page-hero {
+    padding: 21px 18px;
+    border-radius: 12px;
+  }
+
+  .page-title {
+    font-size: clamp(28px, 8vw, 34px);
+  }
+
+  .page-lede {
+    font-size: 12px;
+  }
+
+  .mission-progress-row {
+    margin-top: 14px;
+  }
+
+  .loop-step {
+    padding: 8px 9px;
+  }
+
+  .current-mission-banner {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .current-mission-actions {
+    width: 100%;
+    margin-left: 16px;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .mission-tile {
+    padding: 15px;
+  }
+
+  .mission-tile-title {
+    font-size: 17px;
+  }
+
+  .teacher-section {
+    padding: 14px;
+  }
+
+  .preset-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-utility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-answer-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .answer-head {
+    flex-wrap: wrap;
+  }
+
+  .answer-setup {
+    margin-left: auto;
+  }
+
+  .teacher-quick-actions {
+    justify-content: flex-start;
+  }
+
+  .teacher-status-row {
+    gap: 4px;
+  }
+
+  .status-metrics .status-metric:nth-child(3) {
+    display: none;
+  }
+
+  .stage-view .hud {
+    padding: 8px;
+  }
+
+  .three-overlay {
+    right: 8px;
+    left: 8px;
+    bottom: 8px;
+  }
+
+  .toast-region {
+    bottom: 12px;
+  }
+
+  .panel-inner {
+    padding: 10px;
+  }
+
+  .force-table {
+    font-size: 9px;
+  }
+
+  .force-table th.col-force {
+    width: 70px;
+  }
+
+  .force-table th.col-util {
+    width: 66px;
+  }
+
+  .col-util .meter-track {
+    width: 24px;
+  }
+
+  .footer {
+    font-size: 9px;
+  }
+
+  .footer-meta {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand-mark svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .stage-title {
+    font-size: 19px;
+  }
+
+  .stage-title-row {
+    gap: 6px;
+  }
+
+  .mission-chip {
+    font-size: 9px;
+  }
+
+  .zoom-controls {
+    margin-right: auto;
+  }
+
+  .hud-badges .badge {
+    font-size: 8px;
+  }
+
+  .status-metrics {
+    display: none;
+  }
+
+  .status-actions {
+    margin-left: auto;
+  }
+
+  .stage-status {
+    justify-content: space-between;
+  }
+
+  .stage-view {
+    height: 46vh;
+    min-height: 260px;
+  }
+
+  .page-title {
+    font-size: 27px;
+  }
+
+  .route-tab {
+    font-size: 11px;
+    padding: 8px 9px;
+  }
+
+  .mission-tile-top {
+    gap: 4px;
+  }
+
+  .mission-number {
+    font-size: 21px;
+  }
+
+  .mission-tile-title {
+    font-size: 16px;
+  }
+
+  .tool-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .teacher-quick-actions .btn {
+    flex: 1;
+  }
+
+  .teacher-quick-actions .btn .btn-label {
+    white-space: normal;
+  }
+
+  .dialog-title {
+    font-size: 18px;
+  }
+
+  .dialog-actions {
+    flex-direction: column-reverse;
+  }
+
+  .dialog-actions .btn {
+    width: 100%;
+  }
+}

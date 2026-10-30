@@ -1,0 +1,24 @@
+[
+  {
+    "id": "wood",
+    "nameKo": "목재",
+    "E": 10000000000,
+    "allowableTension": 30000000,
+    "allowableCompression": 20000000,
+    "costPerMeter": 20,
+    "color": "#a97842",
+    "density": 600,
+    "noteKo": "가볍고 저렴하지만 긴 압축 부재는 좌굴에 약합니다."
+  },
+  {
+    "id": "steel",
+    "nameKo": "강재",
+    "E": 200000000000,
+    "allowableTension": 250000000,
+    "allowableCompression": 200000000,
+    "costPerMeter": 80,
+    "color": "#5b6b78",
+    "density": 7850,
+    "noteKo": "비싸지만 탄성계수가 커서 긴 압축 부재도 잘 버팁니다."
+  }
+]

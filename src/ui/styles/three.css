@@ -1,0 +1,115 @@
+.three-frame {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.5), transparent 45%),
+    linear-gradient(160deg, #f4f0e6, #eae5d9);
+}
+
+.scene-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  max-width: 170px;
+  padding: 2px 6px;
+  border: 1px solid rgba(23, 35, 33, 0.15);
+  border-radius: 4px;
+  background: rgba(251, 249, 242, 0.94);
+  box-shadow: 0 2px 6px rgba(23, 35, 33, 0.12);
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 650;
+  line-height: 1.35;
+  white-space: nowrap;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+.scene-label.is-selected {
+  border-color: rgba(199, 149, 44, 0.6);
+  background: var(--gold-soft);
+  color: #5f4709;
+}
+
+.scene-label.is-failed {
+  border-color: rgba(180, 35, 24, 0.45);
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+.scene-load-label {
+  padding: 3px 7px;
+  border: 1px solid rgba(200, 69, 31, 0.45);
+  border-radius: 4px;
+  background: rgba(255, 246, 238, 0.96);
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 3px 8px rgba(23, 35, 33, 0.13);
+}
+
+.scene-empty {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(242, 239, 231, 0.72);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+}
+
+.scene-deflection {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+  background: rgba(20, 33, 30, 0.8);
+  color: #f8f3e6;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  backdrop-filter: blur(5px);
+}
+
+.scene-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.scene-fallback strong {
+  color: var(--ink-2);
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .scene-label {
+    font-size: 8px;
+    max-width: 130px;
+  }
+
+  .scene-deflection {
+    top: 8px;
+    left: 8px;
+  }
+}
